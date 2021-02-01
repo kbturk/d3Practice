@@ -1,0 +1,31 @@
+
+html, body{
+    -webkit-text-size-adjust: 100%;
+    font-family: 'Noto Sans JP',  sans-serif;
+    text-align: center;
+    color: #5a5a5a;
+    font-weight: 400;
+    letter-spacing: -.05rem;
+    width: 100%;
+    height: 100%;
+    padding:0px;
+    margin:0px;
+}
+
+*{box-sizeing:border-box;}
+
+a{
+    text-decoration: none;
+    color: #5a5a5a;
+}
+
+.tutorial{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    width: 954px;
+    margin: 0 auto;
+    align-items: center;
+    height: 800px;
+    background-color: #ececec;
+}
