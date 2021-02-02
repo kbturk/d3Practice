@@ -20,10 +20,26 @@
 <body>
     <h1>D3 Practice</h1>
     <h2>Scatter Plot Brush Selector</h2>
-    <div class = "tutorial" id="scatterplotbrush">Placeholder Text</div>
-    <h4><b><a href="https://observablehq.com/@d3/brushable-scatterplot-matrix">Javascript implementation from Observable</a></b></h5>
-    <h4><b><a href="https://www.terminusdatascience.com">© 2021 kbt | tds, LLC</a></b></h5>
-    <script type="text/javascript" src="main.js" defer></script>
-
+    <h4><a href="https://observablehq.com/@d3/brushable-scatterplot-matrix">Javascript implementation of brush selecting multiple scatter plots from Observable</a></h5>
+    <div class = "tutorial" id="scatterplotbrush">scatterplot brush matrix</div>
+    <h4><a href="https://observablehq.com/@d3/versor-dragging">Javascript implementation of using versor to click and drag earth from Observable</a></h4>
+    <div id= "viewSelectorBox">
+        <select id = "viewSelector">
+            <option value="geoOrthographic">Orthographic</option>
+            <option value="geoMercator">Mercator</option>
+            <option value="geoNaturalEarth1">Natural Earth</option>
+        </select>
+    </div>
+    <div class = "tutorial" id="planetDrag">click and drag the planet
+    </div>
+    <h4><a href="https://www.terminusdatascience.com">© 2021 kbt | tds, LLC</a></h5>
+    <script src="https://unpkg.com/versor"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <script type="module">
+        import make_scatter_matrix from './brushscattermatrix.js';
+        import makeplanetdrag from './planetdrag.js';
+        make_scatter_matrix();
+        makeplanetdrag();
+    </script>
 </body>
 </html>

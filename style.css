@@ -15,8 +15,14 @@ html, body{
 *{box-sizeing:border-box;}
 
 a{
-    /*text-decoration: none;*/
+    text-decoration: none;
     color: #336699;
+}
+
+a:hover{
+    background:#84a3c1;
+    color: #333399;
+    padding: 0 2px;
 }
 
 .tutorial{
@@ -26,6 +32,16 @@ a{
     width: 954px;
     margin: 0 auto;
     align-items: center;
-    height: 800px;
-    background-color: #ececec;
+    height: 954px;
+}
+
+#planetdrag{
+    background-color: #d5d5d5;
+}
+
+#viewSelectorBox{
+    background-color: #d5d5d5;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }

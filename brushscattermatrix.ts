@@ -1,11 +1,8 @@
 
-function elementSize(elm){
+function elementSize(elm: HTMLElement): [number, number]{
     const rect = elm.getBoundingClientRect();
     return [rect.width, rect.height];
 }
-
-let data;
-let columns;
 
 let padding = ({
     top: 28,
@@ -14,25 +11,59 @@ let padding = ({
     left: 28
 });
 
-let xhr = new XMLHttpRequest();
-xhr.open("GET", "penguins.csv");
-xhr.responseType = ""
-xhr.send();
-xhr.onload = function(){
-    if (xhr.status != 200) {
-        console.log(`Error: ${xhr.status}: ${xhr.statusText}`);
-        data = "0,0,0,0";
-    } else {
-        console.log(`Recieved ${xhr.response.length} bytes`);
-        data = xhr.response;
-    }
-    data = d3.csvParse(data, d3.autoType);
-    columns = data.columns.filter(d => typeof data[0][d] === "number");
-    run(data)
+interface PenguinNumeric {
+    culmen_length_mm: number;
+    culmen_depth_mm: number;
+    flipper_length_mm: number;
+    body_mass_g: number;    
 }
 
-function run(data){
-    const SPContainer = document.getElementById("scatterplotbrush");
+interface Penguin extends PenguinNumeric {
+    species: string;
+    island: string;
+    sex: string;
+}
+
+export default function make_scatter_matrix(){
+
+    let csvstring: string;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "penguins.csv");
+    xhr.responseType = ""
+    xhr.send();
+    xhr.onload = function(){
+        if (xhr.status != 200) {
+            console.log(`Error: ${xhr.status}: ${xhr.statusText}`);
+            csvstring = "0,0,0,0";
+        } else {
+            console.log(`Recieved ${xhr.response.length} bytes`);
+            csvstring = xhr.response;
+        }
+        const data = d3.csvParse<Penguin, string>(csvstring, d3.autoType);
+        const columns = (<Array<keyof PenguinNumeric>>
+          data.columns.filter(d => typeof data[0][d] === "number"));
+        run(data, columns);
+    }
+
+}
+
+function safeExtent(xs: number[], fallback: [number, number]): [number, number];
+function safeExtent<T>(xs: T[], fallback: [number, number],
+  projection: (x: T) => number): [number, number];
+function safeExtent<T>(xs: T[], fallback: [number, number],
+  projection?: (x: T) => number): [number, number]
+{
+    const baseExtents = projection
+        ? d3.extent(xs, (x, i, xs) => projection(x))
+        : d3.extent(<number[]><unknown>xs);
+    if (typeof baseExtents[0] === 'number')
+        return (<[number, number]>baseExtents);
+    return fallback;
+}
+
+function run(data: d3.DSVParsedArray<Penguin>, columns: Array<keyof PenguinNumeric>) {
+    const SPContainer = document.getElementById("scatterplotbrush")!;
     SPContainer.innerHTML = '';
     const [width, height] = elementSize(SPContainer);
 
@@ -40,7 +71,7 @@ function run(data){
 
 
     let x = columns.map(c => d3.scaleLinear()
-        .domain(d3.extent(data, d => d[c]))
+        .domain(safeExtent(data, [0,1], d => d[c]))
         .rangeRound([padding.left/2, size - padding.right/2]));
 
     let y = x.map(x => x.copy().range([size - padding.top/2, padding.bottom/2]));
@@ -49,31 +80,41 @@ function run(data){
         .domain(data.map(d => d.species))
         .range(d3.schemeCategory10);
 
-    xAxis = function(g) {
-        const axis = d3.axisBottom()
+    let xAxis = function<A extends d3.BaseType,B,C extends d3.BaseType,D>(g: d3.Selection<A,B,C,D>): d3.Selection<A,B,C,D> {
+        const axis = d3.axisBottom(x[0])
             .ticks(6)
             .tickSize(size * columns.length);
+        //@ts-ignore
         return g.selectAll("g").data(x).join("g")
+            //@ts-ignore
             .attr("transform", (d,i) => `translate(${i * size}, 0)`)
+            //@ts-ignore
             .each(function(d){return d3.select(this).call(axis.scale(d)); })
+            //@ts-ignore
             .call(g => g.select(".domain").remove())
+            //@ts-ignore
             .call(g => g.selectAll(".tick line").attr("stroke", "#ddd"));
     }
 
-    yAxis = function(g) {
-        const axis = d3.axisLeft()
+    let yAxis = function<A extends d3.BaseType,B,C extends d3.BaseType,D>(g: d3.Selection<A,B,C,D>): d3.Selection<A,B,C,D> {
+        const axis = d3.axisLeft(y[0])
             .ticks(6)
             .tickSize(-size * columns.length);
+        //@ts-ignore
         return g.selectAll("g").data(y).join("g")
+            //@ts-ignore
             .attr("transform", (d,i) => `translate(0,${i * size})`)
+            //@ts-ignore
             .each(function(d){ return d3.select(this).call(axis.scale(d)); })
+            //@ts-ignore
             .call(g => g.select(".domain").remove())
+            //@ts-ignore
             .call(g => g.selectAll(".tick line").attr("stroke", "#ddd"));
     }
 
-    function brushSP(data){
+    function brushSP(data: d3.DSVParsedArray<Penguin>){
         const svg = d3.select("#scatterplotbrush").append("svg")
-            .attr("viewBox", [-padding.right, 0, width, width]);
+            .attr("viewBox", `${-padding.left} 0 ${width} ${height}`);
 
         svg.append("style")
             .text(`circle.hidden {fill: #000; fill0opacity: 1; r: 1px;}`);
@@ -100,7 +141,7 @@ function run(data){
 
         cell.each(function([i,j]){
             d3.select(this).selectAll("circle")
-                .data(data.filter(d => !isNaN(d[columns[i]]) && !isNaN(d[columns[j]])))
+                .data(data.filter((d: Penguin) => !isNaN(d[columns[i]]) && !isNaN(d[columns[j]])))
                 .join("circle")
                     .attr("cx", d => x[i](d[columns[i]]))
                     .attr("cy", d => y[j](d[columns[j]]));
@@ -109,9 +150,10 @@ function run(data){
         const circle = cell.selectAll("circle")
             .attr("r", 3.5)
             .attr("fill-opacity", 0.7)
-            .attr("fill", d => z(d.species));
+            .attr("fill", (d: any) => <string>z((<Penguin>d).species));
 
-        cell.call(brush, circle, svg);
+        /*cell.call(brush, circle, svg);*/
+        brush(cell, circle, svg);
 
         svg.append("g")
             .style("font", "bold 10px sans-serif")
@@ -128,7 +170,7 @@ function run(data){
         return svg.node();
     }
 
-    function brush(cell, circle, svg) {
+    function brush<A extends d3.BaseType,B,C extends d3.BaseType,D, E extends d3.BaseType,F,G extends d3.BaseType,H, I extends d3.BaseType,J,K extends d3.BaseType,L>(cell: d3.Selection<A,B,C,D>, circle: d3.Selection<E,F,G,H>, svg:d3.Selection<I,J,K,L>) {
         const brush = d3.brush()
             .extent([[padding.top /2, padding.bottom /2], [size - padding.left/2, size - padding.right/2]])
             .on("start", brushstarted)
