@@ -40,8 +40,8 @@ a:hover{
 }
 
 #viewSelectorBox{
-    background-color: #d5d5d5;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    padding: 10px;
 }

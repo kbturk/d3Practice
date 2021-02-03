@@ -90,7 +90,9 @@ function worldBuilder({ land110, land50 }) {
     //Select projection
     let projectName = document.querySelector("#viewSelector").value;
     let projection = d3[projectName]().precision(0.1);
-    console.log(land110);
+    const [[x0, y0], [x1, y1]] = d3.geoPath(projection.fitWidth(width, sphere)).bounds(sphere);
+    const l1 = Math.min(Math.ceil(x1 - x0), Math.ceil(y1 - y0));
+    projection.scale(projection.scale() * (l1 - 1) / l1).precision(0.2);
     const context = d3.select(`#planetDrag`).append('canvas')
         .attr("width", width)
         .attr("height", height)
@@ -114,6 +116,10 @@ function worldBuilder({ land110, land50 }) {
 }
 export default function makeplanetdrag() {
     getWorldData().then(worldBuilder);
+    let planetview = document.getElementById("viewSelector");
+    planetview.addEventListener("change", function (e) {
+        getWorldData().then(worldBuilder);
+    });
 }
 makeplanetdrag();
 //# sourceMappingURL=planetdrag.js.map

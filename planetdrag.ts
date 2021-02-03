@@ -100,8 +100,10 @@ function worldBuilder({land110, land50}: WorldData) {
     //Select projection
     let projectName = document.querySelector("#viewSelector").value;
     let projection = d3[projectName]().precision(0.1);
+    const [[x0, y0], [x1, y1]] = d3.geoPath(projection.fitWidth(width, sphere)).bounds(sphere);
+    const l1: number = Math.min(Math.ceil(x1 - x0), Math.ceil(y1 - y0));
+    projection.scale(projection.scale()*(l1-1)/l1).precision(0.2);
 
-    console.log(land110);
 
     const context = d3.select(`#planetDrag`).append('canvas')
         .attr("width", width)
@@ -130,6 +132,11 @@ function worldBuilder({land110, land50}: WorldData) {
 export default function makeplanetdrag()
 {
     getWorldData().then(worldBuilder);
+    let planetview = document.getElementById("viewSelector");
+
+    planetview.addEventListener("change", function(e) {
+    getWorldData().then(worldBuilder)});
+
 }
 
 makeplanetdrag();
