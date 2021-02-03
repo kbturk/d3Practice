@@ -39,6 +39,9 @@ a:hover{
     background-color: #d5d5d5;
 }
 
+#lineGraph{
+    height: 254px;
+}
 #viewSelectorBox{
     display: flex;
     flex-flow: column nowrap;

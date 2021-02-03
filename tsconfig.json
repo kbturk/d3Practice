@@ -11,7 +11,7 @@
     "files": [
         "planetdrag.ts",
         "brushscattermatrix.ts",
-        "linegraph.ts"
+        "linegraph.ts",
         "global.d.ts"
     ]
 }
