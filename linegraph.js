@@ -43,6 +43,13 @@ function stockGraph(data) {
     let line = d3.line()
         .x(d => x(d.date))
         .y(d => y(d.close));
+    let reveal = path => path.transition()
+        .duration(5000)
+        .ease(d3.easeLinear)
+        .attrTween("stroke-dasharray", function () {
+        const length = this.getTotalLength();
+        return d3.interpolate(`0,${length}`, `${length},${length}`);
+    });
     let svg = d3.select("#lineGraph").append("svg")
         .attr("viewBox", `0 0 ${width} ${height}`);
     svg.append("path")
@@ -50,7 +57,8 @@ function stockGraph(data) {
         .attr("fill", "none")
         .attr("stroke", "steelblue")
         .attr("stroke-width", "1.5")
-        .attr("stroke-miterlimit", "1");
+        .attr("stroke-miterlimit", "1")
+        .call(reveal);
     svg.append("g")
         .call(xAxis);
     svg.append("g")
@@ -58,5 +66,9 @@ function stockGraph(data) {
 }
 export default function stockGrapher() {
     getStockData().then(stockGraph);
+    let replay = document.getElementById("replayAnimation");
+    replay.addEventListener("click", function (e) {
+        getStockData().then(stockGraph);
+    });
 }
 //# sourceMappingURL=linegraph.js.map
