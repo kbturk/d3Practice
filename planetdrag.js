@@ -1,13 +1,4 @@
 /*import * as topojson from "./topojson-client";*/
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 let sphere = ({ type: "Sphere" });
 let padding = ({
     top: 28,
@@ -70,17 +61,15 @@ function drag(projection) {
         .on("start", dragstarted)
         .on("drag", dragged);
 }
-function getWorldData() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const jsonLand110 = yield fetch("land-110m.json");
-        const jsonLand50 = yield fetch("land-50m.json");
-        const land110 = yield jsonLand110.json();
-        const land50 = yield jsonLand50.json();
-        return {
-            land110: topojson.feature(land110, land110.objects.land),
-            land50: topojson.feature(land50, land50.objects.land)
-        };
-    });
+async function getWorldData() {
+    const jsonLand110 = await fetch("land-110m.json");
+    const jsonLand50 = await fetch("land-50m.json");
+    const land110 = await jsonLand110.json();
+    const land50 = await jsonLand50.json();
+    return {
+        land110: topojson.feature(land110, land110.objects.land),
+        land50: topojson.feature(land50, land50.objects.land)
+    };
 }
 function worldBuilder({ land110, land50 }) {
     //Select container

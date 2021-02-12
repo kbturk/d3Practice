@@ -33,10 +33,15 @@
     </div>
     <div class = "tutorial" id="planetDrag">click and drag the planet
     </div>
-    <h2>D3 animated line graphs</h2>
+    <h2>D3 animated line graph</h2>
     <p><a href="https://observablehq.com/@d3/learn-d3-animation?collection=@d3/learn-d3">a Javascript implementation of an observablehq tutorial.</a></p>
     <button id="replayAnimation">Replay</button>
     <div class = "tutorial" id="lineGraph">animated line graph
+    </div>
+    <h2>D3 animated bar graph</h2>
+    <p><a href = "https://observablehq.com/@d3/bar-chart-race-explained">a Javascript implementation of an observablehq tutorial</a></p>
+    <button id="replayBarGraph">Replay</button>
+    <div class = "tutorial" id="barGraph">animated bar graph
     </div>
     <h4><a href="https://www.terminusdatascience.com">© 2021 kbt | tds, LLC</a></h5>
     <script src="https://unpkg.com/versor"></script>
@@ -45,9 +50,11 @@
         import make_scatter_matrix from './brushscattermatrix.js';
         import makeplanetdrag from './planetdrag.js';
         import stockGrapher from './linegraph.js';
+        import barGrapher from './animatedbarchart.js';
         make_scatter_matrix();
         makeplanetdrag();
         stockGrapher();
+        barGrapher();
 
     </script>
 

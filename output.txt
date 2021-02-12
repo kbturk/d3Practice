@@ -1,0 +1,248 @@
+animatedbarchart.ts(23,5): error TS2739: Type 'DSVParsedArray<BrandData>' is missing the following properties from type 'BrandData': Date, name, category, value
+animatedbarchart.ts(36,28): error TS2339: Property 'map' does not exist on type 'BrandData'.
+animatedbarchart.ts(36,32): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(37,41): error TS2345: Argument of type 'BrandData' is not assignable to parameter of type 'Iterable<unknown>'.
+  Property '[Symbol.iterator]' is missing in type 'BrandData' but required in type 'Iterable<unknown>'.
+animatedbarchart.ts(37,54): error TS2551: Property 'value' does not exist on type 'unknown[]'. Did you mean 'values'?
+animatedbarchart.ts(37,67): error TS2571: Object is of type 'unknown'.
+animatedbarchart.ts(37,80): error TS2571: Object is of type 'unknown'.
+animatedbarchart.ts(38,38): error TS2769: No overload matches this call.
+  Overload 1 of 5, '(value: string | number | Date): Date', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'string | number | Date'.
+      Type 'unknown' is not assignable to type 'Date'.
+  Overload 2 of 5, '(vd: VarDate): Date', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'VarDate'.
+  Overload 3 of 5, '(value: string | number): Date', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'string | number'.
+      Type 'unknown' is not assignable to type 'number'.
+animatedbarchart.ts(39,38): error TS2345: Argument of type 'Date | Map<unknown, unknown>' is not assignable to parameter of type 'string | number | boolean | Date | undefined'.
+  Type 'Map<unknown, unknown>' is not assignable to type 'string | number | boolean | Date | undefined'.
+    Type 'Map<unknown, unknown>' is missing the following properties from type 'Date': toDateString, toTimeString, toLocaleDateString, toLocaleTimeString, and 38 more.
+animatedbarchart.ts(41,15): error TS7006: Parameter 'value' implicitly has an 'any' type.
+animatedbarchart.ts(45,52): error TS2339: Property 'rank' does not exist on type '{ name: unknown; value: any; }'.
+animatedbarchart.ts(49,23): error TS7006: Parameter 'dataValues' implicitly has an 'any' type.
+animatedbarchart.ts(51,13): error TS7034: Variable 'a' implicitly has type 'any' in some locations where its type cannot be determined.
+animatedbarchart.ts(51,20): error TS7034: Variable 'b' implicitly has type 'any' in some locations where its type cannot be determined.
+animatedbarchart.ts(52,11): error TS2488: Type 'unknown' must have a '[Symbol.iterator]()' method that returns an iterator.
+animatedbarchart.ts(52,20): error TS2488: Type 'unknown' must have a '[Symbol.iterator]()' method that returns an iterator.
+animatedbarchart.ts(57,22): error TS7006: Parameter 'name' implicitly has an 'any' type.
+animatedbarchart.ts(57,31): error TS7005: Variable 'a' implicitly has an 'any' type.
+animatedbarchart.ts(57,60): error TS7005: Variable 'b' implicitly has an 'any' type.
+animatedbarchart.ts(61,40): error TS7006: Parameter 'name' implicitly has an 'any' type.
+animatedbarchart.ts(61,48): error TS7005: Variable 'b' implicitly has an 'any' type.
+animatedbarchart.ts(68,38): error TS2550: Property 'flatMap' does not exist on type '(Date | { name: unknown; value: any; }[])[][]'. Do you need to change your target library? Try changing the `lib` compiler option to 'es2019' or later.
+animatedbarchart.ts(68,50): error TS7031: Binding element 'data' implicitly has an 'any' type.
+animatedbarchart.ts(68,72): error TS2571: Object is of type 'unknown'.
+animatedbarchart.ts(70,31): error TS2550: Property 'flatMap' does not exist on type '[any, unknown[]][]'. Do you need to change your target library? Try changing the `lib` compiler option to 'es2019' or later.
+animatedbarchart.ts(70,43): error TS7031: Binding element 'data' implicitly has an 'any' type.
+animatedbarchart.ts(71,31): error TS2550: Property 'flatMap' does not exist on type '[any, unknown[]][]'. Do you need to change your target library? Try changing the `lib` compiler option to 'es2019' or later.
+animatedbarchart.ts(71,42): error TS7031: Binding element 'data' implicitly has an 'any' type.
+animatedbarchart.ts(73,20): error TS7006: Parameter 'a' implicitly has an 'any' type.
+animatedbarchart.ts(73,23): error TS7006: Parameter 'b' implicitly has an 'any' type.
+animatedbarchart.ts(75,19): error TS7006: Parameter 't' implicitly has an 'any' type.
+animatedbarchart.ts(76,5): error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
+animatedbarchart.ts(82,21): error TS2345: Argument of type 'number[]' is not assignable to parameter of type 'Iterable<string>'.
+  The types returned by '[Symbol.iterator]().next(...)' are incompatible between these types.
+    Type 'IteratorResult<number, any>' is not assignable to type 'IteratorResult<string, any>'.
+      Type 'IteratorYieldResult<number>' is not assignable to type 'IteratorResult<string, any>'.
+        Type 'IteratorYieldResult<number>' is not assignable to type 'IteratorYieldResult<string>'.
+          Type 'number' is not assignable to type 'string'.
+animatedbarchart.ts(86,15): error TS7006: Parameter 'svg' implicitly has an 'any' type.
+animatedbarchart.ts(95,11): error TS7006: Parameter '_' implicitly has an 'any' type.
+animatedbarchart.ts(95,14): error TS7006: Parameter 'transition' implicitly has an 'any' type.
+animatedbarchart.ts(103,17): error TS7006: Parameter 'svg' implicitly has an 'any' type.
+animatedbarchart.ts(111,32): error TS2345: Argument of type 'Date | { name: unknown; value: any; }[]' is not assignable to parameter of type 'Date'.
+  Type '{ name: unknown; value: any; }[]' is missing the following properties from type 'Date': toDateString, toTimeString, toLocaleDateString, toLocaleTimeString, and 38 more.
+animatedbarchart.ts(113,12): error TS7031: Binding element 'date' implicitly has an 'any' type.
+animatedbarchart.ts(113,19): error TS7006: Parameter 'transition' implicitly has an 'any' type.
+animatedbarchart.ts(120,12): error TS2339: Property 'some' does not exist on type 'BrandData'.
+animatedbarchart.ts(120,17): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(121,41): error TS2339: Property 'map' does not exist on type 'BrandData'.
+animatedbarchart.ts(121,45): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(122,18): error TS2345: Argument of type 'IterableIterator<unknown>' is not assignable to parameter of type 'Iterable<string>'.
+  The types returned by '[Symbol.iterator]().next(...)' are incompatible between these types.
+    Type 'IteratorResult<unknown, any>' is not assignable to type 'IteratorResult<string, any>'.
+      Type 'IteratorYieldResult<unknown>' is not assignable to type 'IteratorResult<string, any>'.
+        Type 'IteratorYieldResult<unknown>' is not assignable to type 'IteratorYieldResult<string>'.
+          Type 'unknown' is not assignable to type 'string'.
+animatedbarchart.ts(123,12): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(123,23): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+animatedbarchart.ts(125,10): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(130,15): error TS7006: Parameter 'svg' implicitly has an 'any' type.
+animatedbarchart.ts(135,12): error TS7031: Binding element 'date' implicitly has an 'any' type.
+animatedbarchart.ts(135,18): error TS7031: Binding element 'data' implicitly has an 'any' type.
+animatedbarchart.ts(135,25): error TS7006: Parameter 'transition' implicitly has an 'any' type.
+animatedbarchart.ts(136,29): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(138,7): error TS7006: Parameter 'enter' implicitly has an 'any' type.
+animatedbarchart.ts(142,20): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(143,24): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(144,7): error TS7006: Parameter 'update' implicitly has an 'any' type.
+animatedbarchart.ts(145,7): error TS7006: Parameter 'exit' implicitly has an 'any' type.
+animatedbarchart.ts(146,20): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(147,24): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(149,11): error TS7006: Parameter 'bar' implicitly has an 'any' type.
+animatedbarchart.ts(150,18): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(151,22): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(154,17): error TS7006: Parameter 'svg' implicitly has an 'any' type.
+animatedbarchart.ts(161,12): error TS7031: Binding element 'date' implicitly has an 'any' type.
+animatedbarchart.ts(161,18): error TS7031: Binding element 'data' implicitly has an 'any' type.
+animatedbarchart.ts(161,25): error TS7006: Parameter 'transition' implicitly has an 'any' type.
+animatedbarchart.ts(162,29): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(164,7): error TS7006: Parameter 'enter' implicitly has an 'any' type.
+animatedbarchart.ts(165,28): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(169,15): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(170,15): error TS7006: Parameter 'text' implicitly has an 'any' type.
+animatedbarchart.ts(175,7): error TS7006: Parameter 'update' implicitly has an 'any' type.
+animatedbarchart.ts(176,7): error TS7006: Parameter 'exit' implicitly has an 'any' type.
+animatedbarchart.ts(177,28): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(178,15): error TS7006: Parameter 'g' implicitly has an 'any' type.
+animatedbarchart.ts(178,52): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(180,11): error TS7006: Parameter 'bar' implicitly has an 'any' type.
+animatedbarchart.ts(181,26): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(182,13): error TS7006: Parameter 'g' implicitly has an 'any' type.
+animatedbarchart.ts(182,50): error TS7006: Parameter 'd' implicitly has an 'any' type.
+animatedbarchart.ts(200,17): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'Date | { name: unknown; value: any; }[]'.
+  Property '0' does not exist on type 'Date | { name: unknown; value: any; }[]'.
+animatedbarchart.ts(203,16): error TS2345: Argument of type '(Date | { name: unknown; value: any; }[])[]' is not assignable to parameter of type '[any, any]'.
+  Target requires 2 element(s) but source may have fewer.
+animatedbarchart.ts(204,18): error TS2345: Argument of type '(Date | { name: unknown; value: any; }[])[]' is not assignable to parameter of type '[any, any]'.
+animatedbarchart.ts(205,18): error TS2345: Argument of type '(Date | { name: unknown; value: any; }[])[]' is not assignable to parameter of type '[any]'.
+  Target requires 1 element(s) but source may have fewer.
+animatedbarchart.ts(219,5): error TS2531: Object is possibly 'null'.
+brushscattermatrix.ts(177,26): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(typenames: string, listener: null): BrushBehavior<unknown>', gave the following error.
+    Argument of type '({ selection }: { selection: any; }, [i, j]: [any, any]) => void' is not assignable to parameter of type 'null'.
+  Overload 2 of 3, '(typenames: string, listener: (this: SVGGElement, event: any, d: unknown) => void): BrushBehavior<unknown>', gave the following error.
+    Argument of type '({ selection }: { selection: any; }, [i, j]: [any, any]) => void' is not assignable to parameter of type '(this: SVGGElement, event: any, d: unknown) => void'.
+      Types of parameters '__1' and 'd' are incompatible.
+        Type 'unknown' is not assignable to type '[any, any]'.
+brushscattermatrix.ts(182,13): error TS7034: Variable 'brushCell' implicitly has type 'any' in some locations where its type cannot be determined.
+brushscattermatrix.ts(186,17): error TS7005: Variable 'brushCell' implicitly has an 'any' type.
+brushscattermatrix.ts(186,31): error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
+brushscattermatrix.ts(187,27): error TS7005: Variable 'brushCell' implicitly has an 'any' type.
+brushscattermatrix.ts(188,29): error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
+brushscattermatrix.ts(193,27): error TS7031: Binding element 'selection' implicitly has an 'any' type.
+brushscattermatrix.ts(193,40): error TS7031: Binding element 'i' implicitly has an 'any' type.
+brushscattermatrix.ts(193,42): error TS7031: Binding element 'j' implicitly has an 'any' type.
+brushscattermatrix.ts(194,17): error TS7034: Variable 'selected' implicitly has type 'any[]' in some locations where its type cannot be determined.
+brushscattermatrix.ts(198,36): error TS7053: Element implicitly has an 'any' type because expression of type '"culmen_length_mm" | "culmen_depth_mm" | "flipper_length_mm" | "body_mass_g"' can't be used to index type 'unknown'.
+  Property 'culmen_length_mm' does not exist on type 'unknown'.
+brushscattermatrix.ts(199,34): error TS7053: Element implicitly has an 'any' type because expression of type '"culmen_length_mm" | "culmen_depth_mm" | "flipper_length_mm" | "body_mass_g"' can't be used to index type 'unknown'.
+  Property 'culmen_length_mm' does not exist on type 'unknown'.
+brushscattermatrix.ts(200,34): error TS7053: Element implicitly has an 'any' type because expression of type '"culmen_length_mm" | "culmen_depth_mm" | "flipper_length_mm" | "body_mass_g"' can't be used to index type 'unknown'.
+  Property 'culmen_length_mm' does not exist on type 'unknown'.
+brushscattermatrix.ts(201,34): error TS7053: Element implicitly has an 'any' type because expression of type '"culmen_length_mm" | "culmen_depth_mm" | "flipper_length_mm" | "body_mass_g"' can't be used to index type 'unknown'.
+  Property 'culmen_length_mm' does not exist on type 'unknown'.
+brushscattermatrix.ts(210,35): error TS7005: Variable 'selected' implicitly has an 'any[]' type.
+brushscattermatrix.ts(214,30): error TS7031: Binding element 'selection' implicitly has an 'any' type.
+linegraph.ts(24,5): error TS2739: Type 'DSVParsedArray<StockData>' is missing the following properties from type 'StockData': date, close, lower, middle, upper
+linegraph.ts(33,17): error TS2345: Argument of type '[string, string] | [undefined, undefined]' is not assignable to parameter of type 'Iterable<number | Date | { valueOf(): number; }>'.
+  Type '[string, string]' is not assignable to type 'Iterable<number | Date | { valueOf(): number; }>'.
+    The types returned by '[Symbol.iterator]().next(...)' are incompatible between these types.
+      Type 'IteratorResult<string, any>' is not assignable to type 'IteratorResult<number | Date | { valueOf(): number; }, any>'.
+        Type 'IteratorYieldResult<string>' is not assignable to type 'IteratorResult<number | Date | { valueOf(): number; }, any>'.
+          Type 'IteratorYieldResult<string>' is not assignable to type 'IteratorYieldResult<number | Date | { valueOf(): number; }>'.
+            Type 'string' is not assignable to type 'number | Date | { valueOf(): number; }'.
+linegraph.ts(33,27): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(iterable: Iterable<unknown>, accessor: (datum: unknown, index: number, array: Iterable<unknown>) => string | null | undefined): [string, string] | [undefined, undefined]', gave the following error.
+    Argument of type 'StockData' is not assignable to parameter of type 'Iterable<unknown>'.
+      Property '[Symbol.iterator]' is missing in type 'StockData' but required in type 'Iterable<unknown>'.
+  Overload 2 of 4, '(iterable: Iterable<unknown>, accessor: (datum: unknown, index: number, array: Iterable<unknown>) => number | Date | { valueOf(): number; } | null | undefined): [undefined, undefined] | [...]', gave the following error.
+    Argument of type 'StockData' is not assignable to parameter of type 'Iterable<unknown>'.
+linegraph.ts(33,38): error TS2571: Object is of type 'unknown'.
+linegraph.ts(36,17): error TS2345: Argument of type '(string | number | undefined)[]' is not assignable to parameter of type 'Iterable<NumberValue>'.
+  The types returned by '[Symbol.iterator]().next(...)' are incompatible between these types.
+    Type 'IteratorResult<string | number | undefined, any>' is not assignable to type 'IteratorResult<NumberValue, any>'.
+      Type 'IteratorYieldResult<string | number | undefined>' is not assignable to type 'IteratorResult<NumberValue, any>'.
+        Type 'IteratorYieldResult<string | number | undefined>' is not assignable to type 'IteratorYieldResult<NumberValue>'.
+          Type 'string | number | undefined' is not assignable to type 'NumberValue'.
+            Type 'undefined' is not assignable to type 'NumberValue'.
+linegraph.ts(36,28): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(iterable: Iterable<unknown>, accessor: (datum: unknown, index: number, array: Iterable<unknown>) => string | null | undefined): string | undefined', gave the following error.
+    Argument of type 'StockData' is not assignable to parameter of type 'Iterable<unknown>'.
+  Overload 2 of 4, '(iterable: Iterable<unknown>, accessor: (datum: unknown, index: number, array: Iterable<unknown>) => number | { valueOf(): number; } | null | undefined): number | { valueOf(): number; } | undefined', gave the following error.
+    Argument of type 'StockData' is not assignable to parameter of type 'Iterable<unknown>'.
+linegraph.ts(36,39): error TS2571: Object is of type 'unknown'.
+linegraph.ts(39,17): error TS7006: Parameter 'g' implicitly has an 'any' type.
+linegraph.ts(42,17): error TS7006: Parameter 'g' implicitly has an 'any' type.
+linegraph.ts(45,15): error TS7006: Parameter 'g' implicitly has an 'any' type.
+linegraph.ts(48,21): error TS2339: Property 'date' does not exist on type '[number, number]'.
+linegraph.ts(49,21): error TS2339: Property 'close' does not exist on type '[number, number]'.
+linegraph.ts(51,18): error TS7006: Parameter 'path' implicitly has an 'any' type.
+linegraph.ts(55,28): error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
+linegraph.ts(62,27): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(data: [number, number][] | Iterable<[number, number]>): string | null', gave the following error.
+    Argument of type 'StockData' is not assignable to parameter of type '[number, number][] | Iterable<[number, number]>'.
+      Property '[Symbol.iterator]' is missing in type 'StockData' but required in type 'Iterable<[number, number]>'.
+  Overload 2 of 2, '(data: [number, number][] | Iterable<[number, number]>): void', gave the following error.
+    Argument of type 'StockData' is not assignable to parameter of type '[number, number][] | Iterable<[number, number]>'.
+      Type 'StockData' is not assignable to type 'Iterable<[number, number]>'.
+linegraph.ts(81,5): error TS2531: Object is possibly 'null'.
+planetdrag.ts(24,15): error TS7006: Parameter 'projection' implicitly has an 'any' type.
+planetdrag.ts(25,9): error TS7034: Variable 'v0' implicitly has type 'any' in some locations where its type cannot be determined.
+planetdrag.ts(25,13): error TS7034: Variable 'q0' implicitly has type 'any' in some locations where its type cannot be determined.
+planetdrag.ts(25,17): error TS7034: Variable 'r0' implicitly has type 'any' in some locations where its type cannot be determined.
+planetdrag.ts(25,21): error TS7034: Variable 'a0' implicitly has type 'any' in some locations where its type cannot be determined.
+planetdrag.ts(25,25): error TS7034: Variable 'l' implicitly has type 'any' in some locations where its type cannot be determined.
+planetdrag.ts(27,22): error TS7006: Parameter 'event' implicitly has an 'any' type.
+planetdrag.ts(27,29): error TS7006: Parameter 'that' implicitly has an 'any' type.
+planetdrag.ts(30,26): error TS7005: Variable 'l' implicitly has an 'any' type.
+planetdrag.ts(33,37): error TS2345: Argument of type '[any, any]' is not assignable to parameter of type '[event: any]'.
+  Source has 2 element(s) but target allows only 1.
+planetdrag.ts(37,13): error TS7005: Variable 'l' implicitly has an 'any' type.
+planetdrag.ts(47,26): error TS7006: Parameter 'event' implicitly has an 'any' type.
+planetdrag.ts(48,14): error TS2304: Cannot find name 'versor'.
+planetdrag.ts(48,64): error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
+planetdrag.ts(49,14): error TS2304: Cannot find name 'versor'.
+planetdrag.ts(52,22): error TS7006: Parameter 'event' implicitly has an 'any' type.
+planetdrag.ts(53,34): error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
+planetdrag.ts(54,20): error TS2304: Cannot find name 'versor'.
+planetdrag.ts(54,55): error TS7005: Variable 'r0' implicitly has an 'any' type.
+planetdrag.ts(55,23): error TS2304: Cannot find name 'versor'.
+planetdrag.ts(55,36): error TS7005: Variable 'v0' implicitly has an 'any' type.
+planetdrag.ts(56,18): error TS2304: Cannot find name 'versor'.
+planetdrag.ts(56,34): error TS7005: Variable 'q0' implicitly has an 'any' type.
+planetdrag.ts(60,31): error TS7005: Variable 'a0' implicitly has an 'any' type.
+planetdrag.ts(63,18): error TS2304: Cannot find name 'versor'.
+planetdrag.ts(66,27): error TS2304: Cannot find name 'versor'.
+planetdrag.ts(69,47): error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
+planetdrag.ts(69,53): error TS2345: Argument of type '[any, any]' is not assignable to parameter of type '[event: any]'.
+planetdrag.ts(69,61): error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
+planetdrag.ts(89,18): error TS2304: Cannot find name 'topojson'.
+planetdrag.ts(90,17): error TS2304: Cannot find name 'topojson'.
+planetdrag.ts(101,23): error TS2531: Object is possibly 'null'.
+planetdrag.ts(101,63): error TS2339: Property 'value' does not exist on type 'Element'.
+planetdrag.ts(102,22): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type 'typeof import("C:/Users/Katherine/Documents/_Websites/d3play/node_modules/@types/d3/index")'.
+planetdrag.ts(103,88): error TS2345: Argument of type '{ type: string; }' is not assignable to parameter of type 'GeoPermissibleObjects'.
+  Property 'geometries' is missing in type '{ type: string; }' but required in type 'ExtendedGeometryCollection<GeoGeometryObjects>'.
+planetdrag.ts(117,21): error TS7006: Parameter 'land' implicitly has an 'any' type.
+planetdrag.ts(119,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(this: any, object: GeoPermissibleObjects, ...args: any[]): string | null', gave the following error.
+    Argument of type '{ type: string; }' is not assignable to parameter of type 'GeoPermissibleObjects'.
+      Type '{ type: string; }' is not assignable to type 'ExtendedGeometryCollection<GeoGeometryObjects>'.
+  Overload 2 of 2, '(this: any, object: GeoPermissibleObjects, ...args: any[]): void', gave the following error.
+    Argument of type '{ type: string; }' is not assignable to parameter of type 'GeoPermissibleObjects'.
+      Type '{ type: string; }' is not assignable to type 'ExtendedGeometryCollection<GeoGeometryObjects>'.
+planetdrag.ts(121,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(this: any, object: GeoPermissibleObjects, ...args: any[]): string | null', gave the following error.
+    Argument of type '{ type: string; }' is not assignable to parameter of type 'GeoPermissibleObjects'.
+      Type '{ type: string; }' is not assignable to type 'ExtendedGeometryCollection<GeoGeometryObjects>'.
+  Overload 2 of 2, '(this: any, object: GeoPermissibleObjects, ...args: any[]): void', gave the following error.
+    Argument of type '{ type: string; }' is not assignable to parameter of type 'GeoPermissibleObjects'.
+      Type '{ type: string; }' is not assignable to type 'ExtendedGeometryCollection<GeoGeometryObjects>'.
+planetdrag.ts(125,15): error TS2345: Argument of type 'DragBehavior<Element, unknown, unknown>' is not assignable to parameter of type '(selection: Selection<HTMLCanvasElement, unknown, null, undefined>, ...args: any[]) => void'.
+  Types of parameters 'selection' and 'selection' are incompatible.
+    Type 'Selection<HTMLCanvasElement, unknown, null, undefined>' is not assignable to type 'Selection<Element, unknown, any, any>'.
+      Types of property 'merge' are incompatible.
+        Type '(other: Selection<HTMLCanvasElement, unknown, null, undefined>) => Selection<HTMLCanvasElement, unknown, null, undefined>' is not assignable to type '(other: Selection<Element, unknown, any, any>) => Selection<Element, unknown, any, any>'.
+          Types of parameters 'other' and 'other' are incompatible.
+            Type 'Selection<Element, unknown, any, any>' is not assignable to type 'Selection<HTMLCanvasElement, unknown, null, undefined>'.
+              Types of property 'select' are incompatible.
+                Type '{ <DescElement extends BaseType>(selector: string): Selection<DescElement, unknown, any, any>; <DescElement extends BaseType>(selector: null): Selection<null, undefined, any, any>; <DescElement extends BaseType>(selector: ValueFn<...>): Selection<...>; }' is not assignable to type '{ <DescElement extends BaseType>(selector: string): Selection<DescElement, unknown, null, undefined>; <DescElement extends BaseType>(selector: null): Selection<null, undefined, null, undefined>; <DescElement extends BaseType>(selector: ValueFn<...>): Selection<...>; }'.
+                  Types of parameters 'selector' and 'selector' are incompatible.
+                    Types of parameters 'groups' and 'groups' are incompatible.
+                      Type 'Element[] | ArrayLike<Element>' is not assignable to type 'HTMLCanvasElement[] | ArrayLike<HTMLCanvasElement>'.
+                        Type 'Element[]' is not assignable to type 'HTMLCanvasElement[] | ArrayLike<HTMLCanvasElement>'.
+                          Type 'Element[]' is not assignable to type 'HTMLCanvasElement[]'.
+                            Type 'Element' is not assignable to type 'HTMLCanvasElement'.
+planetdrag.ts(137,5): error TS2531: Object is possibly 'null'.

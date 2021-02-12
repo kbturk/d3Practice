@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 function elementSize(elm) {
     const rect = elm.getBoundingClientRect();
     return [rect.width, rect.height];
@@ -17,11 +8,9 @@ let margin = ({
     bottom: 30,
     left: 40
 });
-function getStockData() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const data = yield fetch("aapl-bollinger.csv");
-        return d3.csvParse(yield data.text(), d3.autoType);
-    });
+async function getStockData() {
+    const data = await fetch("aapl-bollinger.csv");
+    return d3.csvParse(await data.text(), d3.autoType);
 }
 function stockGraph(data) {
     const stockGraphContainer = document.getElementById("lineGraph");
